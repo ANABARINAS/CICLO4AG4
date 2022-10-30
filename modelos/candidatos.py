@@ -1,4 +1,4 @@
-from abstractmodel import abstractmodel
+from modelos.abstractmodel import AbstractModel
 
-class candidatos (abstractmodel):
+class Candidatos (AbstractModel):
     pass

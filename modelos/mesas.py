@@ -1,4 +1,4 @@
-from abstractmodel import abstractmodel
+from modelos.abstractmodel import AbstractModel
 
-class mesas(abstractmodel):
+class mesas(AbstractModel):
     pass

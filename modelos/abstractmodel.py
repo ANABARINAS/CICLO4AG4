@@ -1,5 +1,7 @@
-from abc import ABC
+from abc import ABCMeta
 
-class abstractmodel(ABC):
+class AbstractModel(metaclass=ABCMeta):
     def __init__(self,data):
-        setattr(self,data)
+        for llave,valor in data.items():
+            setattr(self,llave,valor)
+  

@@ -1,4 +1,4 @@
-from abstractmodel import abstractmodel
+from modelos.abstractmodel import AbstractModel
 
-class patidos (abstractmodel):
+class patidos (AbstractModel):
     pass
