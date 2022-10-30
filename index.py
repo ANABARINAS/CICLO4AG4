@@ -54,3 +54,10 @@ def create_candidatos():
     datosEntrada = request.get_json()
     datosSalida  = _controlador_candidatos.createcandidatos(datosEntrada)
     return jsonify(datosSalida)    
+
+#path actualizar
+@app.route("/candidatos/<string:id>",methods=['PUT']) 
+def modificar_candidadtos(id):
+    data = request.get_json()
+    json=_controlador_candidatos.updateCandidatos(id,data)
+    return jsonify(json)    
