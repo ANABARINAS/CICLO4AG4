@@ -15,11 +15,17 @@ class controladorcandidatos():
             "nombre":"maria",
             "apellido":"perez"
         }    
+        return Candidatos
 
-    def createcandidatos():
-        pass
+    def createcandidatos(self,datosCandidatos):
+        _candidatos:Candidatos(datosCandidatos)
+        print(_candidatos)
+        return _candidatos.__dict__
+        
 
-    def updatecandidatos():
+    def updatecandidatos(self,id,infoCandidatos):
+        loscandidatos:Candidatos(infoCandidatos)
+        return loscandidatos.__dict__
         pass
 
     def deletecandidatos(self,cedula):

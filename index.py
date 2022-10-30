@@ -37,7 +37,9 @@ def get_home():
 
 #PATH CANDIDATOS
 #path listar
+
 _controlador_candidatos= controladorcandidatos()
+
 @app.route ("/candidatos",methods=["GET"])
 def get_candidatos():
     datos= _controlador_candidatos.getcandidatos()
@@ -56,6 +58,7 @@ def create_candidatos():
     datosSalida  = _controlador_candidatos.createcandidatos(datosEntrada)
     return jsonify(datosSalida)    
 
+<<<<<<< HEAD
 
 
 _controlador_mesas= controladormesas()
@@ -120,3 +123,11 @@ def create_resultados():
     return jsonify(datosSalida)    
 
 
+=======
+#path actualizar
+@app.route("/candidatos/<string:id>",methods=['PUT']) 
+def modificar_candidatos(id):
+    data = request.get_json()
+    json=_controlador_candidatos.updateCandidatos(id,data)
+    return jsonify(json)    
+>>>>>>> 6012219a7b1d8d360738d4ff976834ed88e8cac2
