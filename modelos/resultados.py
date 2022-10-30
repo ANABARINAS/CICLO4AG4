@@ -1,4 +1,4 @@
 from modelos.abstractmodel import AbstractModel
 
-class resultados (AbstractModel):
+class Resultados (AbstractModel):
     pass

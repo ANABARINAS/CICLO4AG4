@@ -4,8 +4,11 @@ from flask import request
 from flask_cors import CORS
 import json
 from waitress import serve
-from controladores.controladorCandidatos import controladorcandidatos, controladormesas, controladorpartidos
-from modelos.resultados import resultados
+from controladores.controladorCandidatos import controladorcandidatos
+from controladores.controladorMesas import controladormesas
+from controladores.controladorPartidos import controladorpartidos
+from controladores.controladorresultados import controladorresultados
+
 
 #instancia flask
 app = Flask(__name__)
@@ -58,10 +61,18 @@ def create_candidatos():
     datosSalida  = _controlador_candidatos.createcandidatos(datosEntrada)
     return jsonify(datosSalida)    
 
-<<<<<<< HEAD
+#path actualizar
+@app.route("/candidatos/<string:id>",methods=['PUT']) 
+def modificar_candidatos(id):
+    data = request.get_json()
+    json=_controlador_candidatos.updatecandidatos(id,data)
+    return jsonify(json) 
 
+#PATH MESAS
+#Path listar
 
 _controlador_mesas= controladormesas()
+
 @app.route ("/mesas",methods=["GET"])
 def get_mesas():
     datos= _controlador_mesas.getmesas()
@@ -80,9 +91,18 @@ def create_mesas():
     datosSalida  = _controlador_mesas.createmesas(datosEntrada)
     return jsonify(datosSalida)  
 
+#path actualizar
+@app.route("/mesas/<string:id>",methods=['PUT']) 
+def modificar_mesas(id):
+    data = request.get_json()
+    json=_controlador_mesas.updatemesas(id,data)
+    return jsonify(json)     
 
+#PATH PARTIDOS
+#path listar
 
 _controlador_partidos= controladorpartidos()
+
 @app.route ("/partidos",methods=["GET"])
 def get_partidos():
     datos= _controlador_partidos.getpartidos()
@@ -99,11 +119,20 @@ def delete_partidos(id):
 def create_partidos():
     datosEntrada = request.get_json()
     datosSalida  = _controlador_partidos.createpartidos(datosEntrada)
-    return jsonify(datosSalida)    
+    return jsonify(datosSalida) 
 
+#path actualizar
+@app.route("/partidos/<string:id>",methods=['PUT']) 
+def modificar_partidos(id):
+    data = request.get_json()
+    json=_controlador_partidos.updatepartidos(id,data)
+    return jsonify(json)        
 
+#PATH RESULTADOS
+#path listar
 
-controlador_resultados= resultados()
+_controlador_resultados= controladorresultados()
+
 @app.route ("/resultados",methods=["GET"])
 def get_resultados():
     datos=_controlador_resultados.getresultados()
@@ -122,12 +151,9 @@ def create_resultados():
     datosSalida  = _controlador_partidos.createresultados(datosEntrada)
     return jsonify(datosSalida)    
 
-
-=======
 #path actualizar
-@app.route("/candidatos/<string:id>",methods=['PUT']) 
-def modificar_candidatos(id):
+@app.route("/resultados/<string:id>",methods=['PUT']) 
+def modificar_resultados(id):
     data = request.get_json()
-    json=_controlador_candidatos.updateCandidatos(id,data)
-    return jsonify(json)    
->>>>>>> 6012219a7b1d8d360738d4ff976834ed88e8cac2
+    json=_controlador_resultados.updateresultados(id,data)
+    return jsonify(json) 
