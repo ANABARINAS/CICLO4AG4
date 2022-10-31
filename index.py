@@ -18,18 +18,24 @@ cors = CORS(app)
 def loadFileConfig ():
     with open ('config.json') as f:
         data= json.load (f)
-        return data
+    return data
+
 #Iniciar aplicación
 if __name__=='__main__':
-    dataConfig = loadFileConfig ()
+    dataConfig = loadFileConfig()
     print("Server running : "+"http://"+dataConfig["url-backend"]+":" + str(dataConfig["port"]))
-serve(app,host=dataConfig["url-backend"],port=dataConfig["port"])
+
+    #CONFIGURAR UN SERVIDOR DE APLICACIONES
+    serve(app,host=dataConfig["url-backend"],port=dataConfig["port"])
 
 
-if __name__=='__main__':
+"""if __name__=='__main__':
     print("Server running")
-    serve(app,host="127.0.0.1",port="5000")
+    serve(app,host="127.0.0.1",port="5000")"""
 
+@app.route ("/")
+def hello_world():
+    return "<p> Hello </p>"
 
 @app.route("/", methods=["GET"])
 def get_home():
@@ -148,7 +154,7 @@ def delete_resultados(id):
 @app.route("/resultados", methods=["POST"])
 def create_resultados():
     datosEntrada = request.get_json()
-    datosSalida  = _controlador_partidos.createresultados(datosEntrada)
+    datosSalida  = _controlador_resultados.createresultados(datosEntrada)
     return jsonify(datosSalida)    
 
 #path actualizar

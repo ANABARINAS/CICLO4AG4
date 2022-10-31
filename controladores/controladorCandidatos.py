@@ -6,23 +6,24 @@ class controladorcandidatos():
         print ("controlador creado")
 
     def getcandidatos(self):
-        Candidatos = {
+        _candidatos = {
             "resolución":"23322",
             "cedula":"10920923",
             "nombre":"maria",
             "apellido":"perez"
         }    
-        return Candidatos
+        return _candidatos
 
     def createcandidatos(self,datosCandidatos):
-        _candidatos:Candidatos(datosCandidatos)
-        print(_candidatos)
-        return _candidatos.__dict__
+        _candidatos1 = None
+        _candidatos1 = Candidatos(datosCandidatos)
+        ##print(_candidatos1)
+        return _candidatos1.__dict__
         
 
     def updatecandidatos(self,id,infoCandidatos):
-        loscandidatos:Candidatos(infoCandidatos)
-        return loscandidatos.__dict__
+        loscandidatos1=Candidatos(infoCandidatos)
+        return loscandidatos1.__dict__
     
 
     def deletecandidatos(self,cedula):

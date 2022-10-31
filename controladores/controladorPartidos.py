@@ -1,4 +1,3 @@
-from ast import Return
 from modelos.partidos import Partidos
 
 
@@ -15,12 +14,12 @@ class controladorpartidos():
         return Partidos
 
     def createpartidos(self,datosPartidos):
-        _partidos:Partidos(datosPartidos)
+        _partidos=Partidos(datosPartidos)
         print (_partidos)
         return _partidos.__dict__
 
     def updatepartidos(self,id,infoPartidos):
-        lospartidos:Partidos(infoPartidos)
+        lospartidos=Partidos(infoPartidos)
         return lospartidos.__dict__
         
     def deletepartdos(self,nombre):

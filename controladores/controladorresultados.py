@@ -13,12 +13,12 @@ class controladorresultados():
         return Resultados
 
     def createresultados(self,datosResultados):
-        _resultados:Resultados(datosResultados)
+        _resultados=Resultados(datosResultados)
         print (_resultados)
         return _resultados.__dict__
-        
-    def updateresultados(self,id,infoResultados):
-        losresultados:Resultados(infoResultados)
+
+    def updateresultados (self,id,infoResultados):
+        losresultados=Resultados(infoResultados)
         return losresultados.__dict__
         
     def deleteresultados(self,total):

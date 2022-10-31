@@ -1,4 +1,3 @@
-from modelos.candidatos import Candidatos
 from modelos.mesas import Mesas
 
 class controladormesas():
@@ -11,16 +10,16 @@ class controladormesas():
             "numero_mesa":"uno",
             "numero_cedulas":"124",
         }    
-        return Candidatos
+        return Mesas
 
     def createmesas(self, datosMesas):
-        _mesas:Mesas(datosMesas)
+        _mesas = Mesas(datosMesas)
         print(_mesas)
         return _mesas.__dict__
         
 
     def updatemesas(self,id,infoMesas):
-        lasmesas:Mesas(infoMesas)
+        lasmesas=Mesas(infoMesas)
         return lasmesas.__dict__
         
 

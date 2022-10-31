@@ -1,9 +1,4 @@
 {
-<<<<<<< HEAD
-  "url backend":"127.0.0.1",
-  "port":"5000"
-=======
-    "url-backend":"127.0.0.1",
-    "port": 9999
->>>>>>> 88f6118ca2ed324d88c1d85cbae61c3d6cd55fe7
-}
+    "url-backend": "127.0.0.1",
+    "port": 5000
+}    
